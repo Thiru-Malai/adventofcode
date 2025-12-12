@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(){
-    ifstream file("2_secret_entrance.txt");
-    ifstream file1("2_example.txt");
+    ifstream file("input.txt");
+    ifstream file1("example_input.txt");
     string rotation;
     char direction;
     int current_position = 50, value, result = 0;

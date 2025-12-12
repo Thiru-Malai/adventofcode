@@ -5,15 +5,14 @@
 using namespace std;
 
 int main(){
-    ifstream file("1_secret_entrance.txt");
-    ifstream file1("1_example.txt");
+    ifstream file("input.txt");
+    ifstream file1("example_input.txt");
     string rotation;
     char direction;
-    int current_position = 50, value, result = 0, prev_output;
+    int current_position = 50, value, result = 0;
     while(getline(file, rotation)){
         direction = rotation[0];
         value = stoi(rotation.substr(1, rotation.length() -1));
-        cout<< "Input " << value;
         if(value > 100){
             value%=100;
         }
@@ -37,7 +36,6 @@ int main(){
         if(current_position == 0){
             result++;
         }
-        cout << " Output " << current_position << endl;
     }
     cout << result << endl;
     return 0;
