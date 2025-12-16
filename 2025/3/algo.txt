@@ -1,0 +1,44 @@
+Input:
+987654321111111
+Output:
+98
+
+What is the solution?
+The solution requires the largest 2 digit value in the same order.
+
+How?
+We need to find the largest number among the first to last second digit.
+Largest Digit among index 0 to index n-2 in 987654321111111 is 9.
+We need to find the next max digit.
+
+When max digit is found out, we need to erase the second max digit and find the max digit that is upcoming.
+
+Example:
+811111111111119
+firstMaxDigit = 8
+secondMaxDigit = 1
+
+i = 1; v = 1; v >= 8; v = 8; i++;
+i = 2; v = 1; v >= 9; v = 8; i++;
+i = 3; v = 1; v >= 8; v = 8; i++;
+i = 4; v = 1; v >= 9; v = 8; i++;
+i = 5; v = 1; v >= 8; v = 8; i++;
+i = 6; v = 1; v >= 9; v = 8; i++;
+i = 7; v = 1; v >= 8; v = 8; i++;
+i = 8; v = 1; v >= 9; v = 8; i++;
+i = 9; v = 1; v >= 8; v = 8; i++;
+i = 10; v = 1; v >= 9; v = 8; i++;
+i = 11; v = 1; v >= 9; v = 8; i++;
+i = 12; v = 1; v >= 9; v = 8; i++;
+i = 13; v = 1; v >= 9; v = 8; i++;
+
+234
+189
+918
+219
+999
+2832
+7892
+
+
+// just gave a try and done it in paper afterwards :) 
