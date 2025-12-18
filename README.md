@@ -7,7 +7,7 @@ I have categorized by year and the # of the problem. If a problem has different 
 
 First compile the cpp files (compiled files are already there):
 <br>
-`$ g++ name.cpp name`
+`$ g++ name.cpp -o name`
 <br>
 which generates the .exe file 
 <br>
