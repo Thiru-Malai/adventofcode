@@ -1,5 +1,6 @@
 // Results
 
+Output Result for part 2
 Too Low:
 350134484675685
 350330878982892
