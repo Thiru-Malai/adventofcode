@@ -15,7 +15,6 @@ int main(){
     for(int i = 0; i < 1000; i++){
         multiplyOfColumn[i] = 1;
     }
-    cout<<multiplyOfColumn[0]<<" "<<multiplyOfColumn[1]<<endl;
     while(getline(file, line)){
         vector<unsigned long long> lineInput;
         int index = 0;
@@ -36,7 +35,6 @@ int main(){
             else if(line[i] == ' '){
                 if(numberStr.length()){
                     number = stoull(numberStr);
-                    cout<<number<<endl;
                     lineInput.push_back(number);
                     sumOfColumn[index]+=number;
                     multiplyOfColumn[index]*=number;
@@ -45,22 +43,19 @@ int main(){
                 }
             }
         }
+        if(numberStr.length()){
+            number = stoull(numberStr);
+            lineInput.push_back(number);
+            sumOfColumn[index]+=number;
+            multiplyOfColumn[index]*=number;
+            index++;
+            numberStr = "";    
+        }
         if(index > maxIndex){
             maxIndex = index;
         }
         input.push_back(lineInput);
-        cout<<endl;
     }
-    
-    cout<<"Sum of columns"<<endl;
-    for(int i = 0; i < maxIndex; i++){
-        cout<<sumOfColumn[i]<< " ";
-    }
-    
-    cout<<endl<<"Multiply of columns"<<endl;
-    for(int i = 0; i < maxIndex; i++){
-        cout<<multiplyOfColumn[i]<<" ";
-    }
-    cout<<endl<<result;
+    cout<<result;
     return 0;
 }
