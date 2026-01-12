@@ -1,0 +1,4 @@
+edge -> 1
+adjacent -> n + 1 -> n is the number of adjacent splitters
+if there is 1 edge in adjacent -> n
+if there is 2 edge in adjacent -> n - 1
