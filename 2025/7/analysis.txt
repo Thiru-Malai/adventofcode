@@ -1,3 +1,4 @@
+Analysis 1:
 .......S....... -> 0
 .......|....... -> 0
 ......|^|...... -> 2
@@ -14,3 +15,8 @@
 .|.|||.||.||.|. -> 0
 |^|^|^|^|^|||^| -> 5
 |.|.|.|.|.|||.| -> 0
+
+
+The above analysis is not correct.
+Simple logic - if the beam is split then it counts as 1.
+No of splitters is 22. But in the last second line, the 5 splitter from left does not split the beam. Except that all the beams are getting splitted into two. So the answer is 21. :)
