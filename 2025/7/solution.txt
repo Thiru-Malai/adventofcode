@@ -4,3 +4,4 @@ if there is 1 edge in adjacent -> n
 if there is 2 edge in adjacent -> n - 1
 
 Solution 1: 1566
+Solution 2: 5921061943075

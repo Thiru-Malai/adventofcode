@@ -12,14 +12,14 @@ int main() {
   unsigned long long result = 0;
   int s_pos = 0, lineCount = 0, rowLength = 0;
   vector<vector<char>> manifold;
-  vector<int> splitter_pos;
   char new_manifold[300][300];
-  
+  unsigned long long new_manifold_value[300][300];
+
   for(int i = 0; i < 300; i++){
       for(int j = 0; j < 300; j++){
-          new_manifold[i][j] = '.'; 
+          new_manifold[i][j] = '.';
+          new_manifold_value[i][j] = 0;
       }
-      cout<<endl;
   }
   while (getline(file, line)) {
     rowLength = line.length();
@@ -34,11 +34,14 @@ int main() {
           if(line[i] == '.' && lineCount > 0 && (new_manifold[lineCount-1][i] == 'S' || new_manifold[lineCount-1][i] == '|')){
               line[i] = '|';
               new_manifold[lineCount][i] = '|';
+              new_manifold_value[lineCount][i] += new_manifold_value[lineCount-1][i];
           } else if(line[i] == '^' && (new_manifold[lineCount-1][i] == '|')){
               result++;
               new_manifold[lineCount][i-1] = '|';
               new_manifold[lineCount][i+1] = '|';
               new_manifold[lineCount][i] = '^';
+              new_manifold_value[lineCount][i-1]+=(new_manifold_value[lineCount-1][i] ? new_manifold_value[lineCount-1][i] :  1);
+              new_manifold_value[lineCount][i+1]+=(new_manifold_value[lineCount-1][i] ? new_manifold_value[lineCount-1][i] :  1);
           } else if(line[i] == '^' && (new_manifold[lineCount-1][i] != '|')){
               new_manifold[lineCount][i] = '^';
           }
@@ -48,12 +51,9 @@ int main() {
     lineCount++;
     manifold.push_back(manifoldRow);
   }
-  cout<<endl;
-  for(int i = 0; i < lineCount; i++){
-      for(int j = 0; j < rowLength; j++){
-        cout<<new_manifold[i][j]; 
-      }
-      cout<<endl;
+  unsigned long long sum = 0;
+  for(int i = 0; i < rowLength; i++){
+      sum+=new_manifold_value[lineCount-1][i];
   }
-  cout<<"Result "<<result;
+  cout<<"Sum "<<sum<<endl;
 }
